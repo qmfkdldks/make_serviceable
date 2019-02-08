@@ -1,4 +1,5 @@
 require "serviceable/version"
+require "circuitbox"
 
 module Serviceable
   class Error < StandardError; end
@@ -8,24 +9,24 @@ module Serviceable
   end
 
   module ClassMethods
+    def service_name
+      self.name
+    end
+
+    def circuit_options
+      {}
+    end
+
+    def circuit
+      Circuitbox.circuit(service_name, circuit_options)
+    end
+
     def call(*args)
+      obj = new(*args)
       circuit.run do
-        new(*args).call
+        obj.call
       end
     end
   end
 
-  # protected
-  def service_name
-    self.class.name
-  end
-
-  def circuit_options
-    {}
-  end
-
-  private
-  def circuit
-    Circuitbox.circuit(service_name, circuit_options)
-  end
 end
