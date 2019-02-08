@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    serviceable (0.1.0)
+    make_serviceable (0.1.0)
       circuitbox
       thor
 
@@ -80,9 +80,9 @@ DEPENDENCIES
   aruba
   bundler (~> 2.0)
   cucumber
+  make_serviceable!
   rake (~> 10.0)
   rspec (~> 3.0)
-  serviceable!
 
 BUNDLED WITH
    2.0.1

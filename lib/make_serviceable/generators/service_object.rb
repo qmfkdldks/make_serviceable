@@ -1,6 +1,6 @@
 require 'thor/group'
 
-module Serviceable
+module MakeServiceable
   module Generators
     class ServiceObject < Thor::Group
       include Thor::Actions

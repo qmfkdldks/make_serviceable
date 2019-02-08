@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "serviceable"
+require "make_serviceable"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-
-require "serviceable/cli"
-Serviceable::CLI.start

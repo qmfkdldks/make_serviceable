@@ -1,10 +1,10 @@
 class TestService
-  include Serviceable
+  include MakeServiceable
 end
 
-RSpec.describe Serviceable do
+RSpec.describe MakeServiceable do
   it "has a version number" do
-    expect(Serviceable::VERSION).not_to be nil
+    expect(MakeServiceable::VERSION).not_to be nil
   end
 
   let(:serivce_class) { TestService }

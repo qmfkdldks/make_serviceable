@@ -1,5 +1,5 @@
 class <%= name.capitalize %>
-  include Serviceable
+  include MakeServiceable
 
   # Pass ncessary parameters and then use it in #call
   def initialize()

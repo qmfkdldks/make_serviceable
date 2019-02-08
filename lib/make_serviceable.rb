@@ -1,7 +1,7 @@
-require "serviceable/version"
+require "make_serviceable/version"
 require "circuitbox"
 
-module Serviceable
+module MakeServiceable
   class Error < StandardError; end
 
   def self.included(base)
