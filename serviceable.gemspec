@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "serviceable/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "serviceable_brian"
+  spec.name          = "serviceable"
   spec.version       = Serviceable::VERSION
   spec.authors       = ["Brian Kang"]
   spec.email         = ["qmfkdldks@gmail.com"]
