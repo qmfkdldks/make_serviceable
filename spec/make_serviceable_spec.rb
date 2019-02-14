@@ -30,12 +30,13 @@ RSpec.describe MakeServiceable do
       end
 
       def self.circuit_options
-        { volume_threshold: 5, exceptions: [Timeout::Error] }
+        { volume_threshold: 5, exceptions: [ArgumentError] }
       end
 
       def call
+        puts "LLamo call!!!!!!!!!!!"
         @@run_count += 1
-        raise Timeout::Error
+        raise ArgumentError
       end
     end
 

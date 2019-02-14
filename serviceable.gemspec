@@ -43,6 +43,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "cucumber"
   spec.add_development_dependency "aruba"
 
-  spec.add_dependency "thor"
-  spec.add_dependency "circuitbox"
+  spec.add_dependency "thor", '~> 0.20.3'
+  spec.add_dependency "facets", '~> 3.1'
+  spec.add_dependency "circuitbox", '~> 1.1', '>= 1.1.1'
+  spec.add_dependency 'activesupport', '~> 5.2', '>= 5.2.2'
 end

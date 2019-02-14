@@ -1,4 +1,5 @@
 require 'thor/group'
+require 'active_support/inflector'
 
 module MakeServiceable
   module Generators
@@ -14,9 +15,11 @@ module MakeServiceable
       # def create_group
       #   empty_directory("app/services")
       # end
-
+      
       def copy_recipe
-        template("service_template.rb", "app/services/#{name.downcase}.rb")
+        puts name.underscore
+        puts name.classify
+        template("service_template.rb", "app/services/#{name.underscore}.rb")
       end
 
     end

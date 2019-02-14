@@ -1,4 +1,4 @@
-class <%= name.capitalize %>
+class <%= name.classify %>
   include MakeServiceable
 
   # Pass ncessary parameters and then use it in #call
