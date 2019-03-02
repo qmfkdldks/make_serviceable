@@ -1,8 +1,6 @@
 # MakeServiceable
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/make_serviceable`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem will help you implement circuit breaker pattern to all services objects. Any unstable API should be protected by circuit breaker pattern. When API call fails so frequently, circuit will be opened and will skip the method directly to fail fast and get more resilient behaviour. After few seconds it will close circuit so method get called normaly.
 
 ## Installation
 
@@ -22,17 +20,47 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Following command will create new service object under app/services folder.
+
+```
+$ bundle exec make_serviceable generate TestService
+```
+This is how service object looks like.
+
+```ruby
+class TestService
+  include MakeServiceable
+
+  # Pass ncessary parameters and then use it in #call
+  def initialize()
+  end
+
+  # Set service name (optional). Default is class name
+  # def service_name
+  # end
+
+  # Chage circuit behaviour here. Read documentation of circuitbox
+  # def circuit_option
+  # {}
+  # end
+
+  def call
+    # Call any API call here. All failures are captured by circuit and it will be protected by circuit breaker pattern.
+  end
+end
+```
+And you can call 
+```ruby
+TestService.call()
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/make_serviceable. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
 
 ## License
 
